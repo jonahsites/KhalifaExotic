@@ -33,25 +33,25 @@ const modelData = [
 const sections = [
   {
     label: "01 — Luxury Super SUV",
-    title: "Lamborghini\nUrus SE",
-    desc: "The ultimate expression of versatile luxury. A masterclass in automotive presence and uncompromising craftsmanship.",
-    tags: ["Elite Class", "Hybrid Tech", "Bespoke Interior"],
+    title: "Lamborghini\nUrus",
+    desc: "The ultimate expression of versatile luxury. A masterclass in automotive presence and uncompromising performance, now in the heart of Atlanta.",
+    tags: ["Elite Class", "Twin-Turbo V8", "Bespoke Interior"],
     color: "#050505",
     accent: "#C5A47E"
   },
   {
-    label: "02 — Refined Precision",
-    title: "BMW\nM4 Competition",
-    desc: "A surgical blend of elegance and athletic design. Every detail curated for an engaging, yet sophisticated journey.",
-    tags: ["Grand Tourer", "S58 Inline-6", "Isle of Man Green"],
+    label: "02 — German Engineering",
+    title: "Audi\nR8 V10",
+    desc: "A surgical blend of elegance and athletic design. The naturally aspirated icon, curated for an engaging journey through the city.",
+    tags: ["Supercar", "Quattro AWD", "Daytona Grey"],
     color: "#050505",
     accent: "#C5A47E"
   },
   {
-    label: "03 — Pure Elegance",
-    title: "McLaren\n570S Coupe",
-    desc: "The art of grand touring. Lightweight carbon construction meets timeless design for the perfect coastal escape.",
-    tags: ["Carbon Monocell", "Signature Collection", "Starlight Black"],
+    label: "03 — Modern Luxury",
+    title: "Mercedes\nAMG GLE 53",
+    desc: "The perfect balance of space and speed. Experience the peak of comfort and performance for your next Atlanta adventure.",
+    tags: ["AMG Performance", "Luxury SUV", "Obsidian Black"],
     color: "#050505",
     accent: "#C5A47E"
   }

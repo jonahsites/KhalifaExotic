@@ -9,7 +9,8 @@ const navLinks = [
   { name: "Our Collection", type: "page" },
   { name: "About Us", href: "#about" },
   { name: "Services", href: "#services" },
-  { name: "Investors", href: "#" },
+  { name: "Shop", type: "page" },
+  { name: "Rent Your Car", href: "#partner" },
 ];
 
 const faqItems = [
@@ -20,20 +21,20 @@ const faqItems = [
   { q: "What if my insurance deductible is over $2,500?", a: "We may require an additional security deposit or supplemental coverage in certain high-deductible cases." },
   { q: "Do you have any extra hidden fees?", a: "Transparency is key. We detail all costs upfront, including delivery, fuel, and security deposits." },
   { q: "Insurance requirements for business rentals?", a: "Business rentals require commercial insurance coverage or a verified corporate policy. Contact us for specifics." },
-  { q: "Do you offer delivery service?", a: "Yes! We offer delivery to Miami International Airport (MIA), Fort Lauderdale (FLL), and custom locations across the Miami area." },
+  { q: "Do you offer delivery service?", a: "Yes! We offer delivery to Hartsfield-Jackson Atlanta International Airport (ATL) and custom locations across the Atlanta metro area." },
   { q: "How many miles are included with my rental?", a: "Standard rentals typically include 100-150 miles per day. Excess mileage fees apply thereafter." },
   { q: "What is your security deposit policy?", a: "A refundable security deposit is required for all rentals. The amount varies based on the vehicle selected." },
   { q: "What is your cancellation policy?", a: "Cancellations made 72+ hours in advance are eligible for a credit. Late cancellations may incur fees." },
   { q: "Do you offer pick-up or drop-off outside of business hours?", a: "Yes, we offer flexible pick-up and drop-off options. Please coordinate with our team in advance for after-hours service." },
-  { q: "Do you offer roadside assistance?", a: "Every rental includes 24/7 roadside assistance for your peace of mind while exploring the Miami area." },
+  { q: "Do you offer roadside assistance?", a: "Every rental includes 24/7 roadside assistance for your peace of mind while exploring the Atlanta area." },
   { q: "Less than 72 hour reservation?", a: "While we prefer advance booking, we can often accommodate last-minute requests. Check availability directly for same-day requests." },
   { q: "Do you offer military discount?", a: "We are proud to support our service members. Please inquire about our military discount program when booking." },
 ];
 
 const specs = [
-  { val: "$715", label: "Starting / Day" },
+  { val: "$175", label: "Starting / Day" },
   { val: "Elite", label: "Collection" },
-  { val: "MIAMI", label: "Coverage" },
+  { val: "ATLANTA", label: "Coverage" },
   { val: "24/7", label: "Support" },
 ];
 
@@ -58,12 +59,12 @@ export default function App() {
       <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-100 flex items-center gap-2 px-2 py-2 bg-black/40 backdrop-blur-xl border border-white/10 rounded-full pointer-events-auto">
         <div className="flex items-center gap-3 px-6 py-2 border-r border-white/10">
           <img 
-            src="https://scontent-lga3-1.cdninstagram.com/v/t51.82787-19/656854235_18065585342344384_6068187014476373540_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=103&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy43NjguQzMifQ%3D%3D&_nc_ohc=Rq-EMEOlmg0Q7kNvwHDzoXk&_nc_oc=AdpwY2WAo4vpouw9o6iVw_B-Q9xgvIjdxvU83WTslfvY2Z6f2I5vtjQ9lxFbJ0W8KSfthgBLJbJoLKNA0LyWk05Q&_nc_zt=24&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_gid=v0cAt6opGnt4a6IJvcLzqg&_nc_ss=7b6a8&oh=00_Af1t_-esJnGUbQms3z2LrHR0r6B5hCCDOfjsdpdc4MfjnA&oe=69F5824B" 
-            alt="Prime Mile Club" 
-            className="h-8 w-8 rounded-full border border-white/10 object-cover"
+            src="https://static.wixstatic.com/media/2a3a0c_6120e46b142544cb932f45f92b53365f~mv2.png/v1/fill/w_482,h_321,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/62BB08A8-3DDB-498A-B48A-D877DE454C42%20(1)_PNG.png" 
+            alt="Khalifa Exotic Rentals" 
+            className="h-8 w-12 rounded-sm object-contain"
             referrerPolicy="no-referrer"
           />
-          <span className="text-[10px] font-extralight uppercase tracking-[0.5em] text-white hidden md:block">Prime Mile Club</span>
+          <span className="text-[10px] font-extralight uppercase tracking-[0.5em] text-white hidden lg:block">Khalifa Exotics</span>
         </div>
         <div className="flex items-center gap-1 md:gap-4 px-2">
           {navLinks.map((link, i) => (
@@ -71,12 +72,12 @@ export default function App() {
               key={link.name}
               href={link.href}
               onClick={(e) => {
-                if (link.type === "page") {
+                if (link.type === "page" || link.name === "Our Collection") {
                   e.preventDefault();
                   setShowInventory(true);
                 }
               }}
-              className="px-4 py-2 text-[9px] uppercase tracking-[0.4em] font-light text-white/50 hover:text-white transition-colors cursor-pointer rounded-full hover:bg-white/5"
+              className="px-4 py-2 text-[9px] uppercase tracking-[0.4em] font-light text-white/50 hover:text-white transition-colors cursor-pointer rounded-full hover:bg-white/5 text-nowrap"
             >
               {link.name}
             </motion.a>
@@ -108,8 +109,8 @@ export default function App() {
                 <span className="text-[10px] font-black uppercase tracking-[0.8em] text-accent">Distinction Ready</span>
               </div>
               <h1 className="text-7xl md:text-9xl lg:text-[140px] font-serif font-thin leading-[0.8] uppercase tracking-[-0.04em] mb-12">
-                Prime <br/> 
-                <span className="text-outline">Distinction.</span>
+                Absolute <br/> 
+                <span className="text-outline">Best.</span>
               </h1>
               <div className="grid grid-cols-2 gap-12 max-w-md border-t border-white/10 pt-12">
                 <div>
@@ -117,8 +118,8 @@ export default function App() {
                   <p className="text-sm font-light leading-relaxed text-white/80">Refined automotive icons selected for the visionary traveler.</p>
                 </div>
                 <div>
-                  <p className="text-[9px] uppercase tracking-[0.4em] text-white/30 mb-2">Miami Collection</p>
-                  <p className="text-sm font-light leading-relaxed">Serving South Florida & Beyond.</p>
+                  <p className="text-[9px] uppercase tracking-[0.4em] text-white/30 mb-2">Atlanta Collection</p>
+                  <p className="text-sm font-light leading-relaxed">Serving the Metro Area & Beyond.</p>
                 </div>
               </div>
             </motion.div>
@@ -148,8 +149,8 @@ export default function App() {
               <div className="absolute bottom-8 left-8 right-8">
                 <div className="flex justify-between items-end">
                   <div>
-                    <p className="text-4xl font-light mb-1 tracking-tighter">PRIME MILE</p>
-                    <p className="text-[10px] uppercase tracking-[0.5em] text-accent font-extralight">Unlimited Elevation</p>
+                    <p className="text-4xl font-light mb-1 tracking-tighter uppercase whitespace-pre-line">Khalifa{"\n"}Exotic</p>
+                    <p className="text-[10px] uppercase tracking-[0.5em] text-accent font-extralight">Book the Absolute Best</p>
                   </div>
                   <MousePointer2 className="text-white/20 -rotate-12" size={32} />
                 </div>
@@ -272,24 +273,24 @@ export default function App() {
                 <div className="w-20 h-[1px] bg-accent" />
                 <span className="text-[10px] font-bold uppercase tracking-[0.8em] text-accent">Core Protocol</span>
               </div>
-              <h2 className="text-7xl md:text-9xl font-serif font-thin tracking-tighter uppercase leading-[0.85] mb-12">Total <br/> <span className="text-outline">Excellence.</span></h2>
+              <h2 className="text-7xl md:text-9xl font-serif font-thin tracking-tighter uppercase leading-[0.85] mb-12">Since <br/> <span className="text-outline">2021.</span></h2>
               <div className="space-y-8 text-white/50 text-xl leading-relaxed font-extralight">
                 <p>
-                  &gt; PRIME MILE CLUB IS THE NEW STANDARD.<br/>
-                  &gt; REFINING THE MIAMI LUXURY LANDSCAPE.
+                  &gt; KHALIFA EXOTIC RENTALS IS THE STANDARD.<br/>
+                  &gt; ELEVATING THE ATLANTA LANDSCAPE.
                 </p>
                 <p className="text-base text-white/30 uppercase tracking-[0.4em] leading-loose">
-                  Our fleet is a curated selection of refined automotive icons. We provide the portal to Miami's most exclusive destinations, maintained to obsessive standards and delivered with total discretion.
+                  Whether you’re planning on staying within the Atlanta area or venturing a little further in the metro area, we’ve got you covered with all of your rental needs. Founded in 2021, we carry a wide selection of popular brands and models at unbeatable prices. Just give us a call or leave a message & we will have a vehicle ready for you today!
                 </p>
               </div>
               <div className="mt-16 grid grid-cols-2 gap-12 border-t border-white/5 pt-16">
                 <div>
-                  <p className="text-5xl font-bold mb-2">04</p>
-                  <p className="text-[9px] uppercase tracking-[0.4em] text-accent font-bold">Primary Hubs</p>
+                  <p className="text-5xl font-bold mb-2">678</p>
+                  <p className="text-[9px] uppercase tracking-[0.4em] text-accent font-bold">Direct Line</p>
                 </div>
                 <div>
                   <p className="text-5xl font-bold mb-2">100%</p>
-                  <p className="text-[9px] uppercase tracking-[0.4em] text-accent font-bold">Execution</p>
+                  <p className="text-[9px] uppercase tracking-[0.4em] text-accent font-bold">Absolute Best</p>
                 </div>
               </div>
             </div>
@@ -309,58 +310,102 @@ export default function App() {
         </div>
       </section>
 
+      {/* PARTNER / RENT YOUR CAR SECTION */}
+      <section id="partner" className="relative z-20 py-48 bg-black">
+        <div className="max-w-[1400px] mx-auto px-10 md:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-32">
+            <div>
+              <span className="text-[10px] font-bold uppercase tracking-[0.8em] text-accent mb-6 block">Fleet Expansion</span>
+              <h2 className="text-6xl md:text-8xl font-serif font-bold tracking-tighter uppercase leading-[0.85] mb-12">
+                Rent Your Car <br/> <span className="text-outline">& Earn Daily.</span>
+              </h2>
+              <p className="text-white/40 text-lg uppercase tracking-widest leading-relaxed max-w-sm">
+                Want To Rent Your Car And Earn Extra Cash Daily? Submit Your Car Details & We Will Be In Touch With Your Daily Earnings.
+              </p>
+            </div>
+            
+            <form className="space-y-6 bg-white/[0.02] p-12 border border-white/10 corner-bracket" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex flex-col gap-2">
+                  <label className="text-[10px] uppercase tracking-widest text-white/30">Name</label>
+                  <input type="text" placeholder="Enter your name" className="bg-white/5 border border-white/10 p-4 text-sm focus:outline-none focus:border-accent transition-colors" />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-[10px] uppercase tracking-widest text-white/30">Email</label>
+                  <input type="email" placeholder="Enter your email" className="bg-white/5 border border-white/10 p-4 text-sm focus:outline-none focus:border-accent transition-colors" />
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-[10px] uppercase tracking-widest text-white/30">Subject</label>
+                <input type="text" placeholder="Type the subject" className="bg-white/5 border border-white/10 p-4 text-sm focus:outline-none focus:border-accent transition-colors" />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-[10px] uppercase tracking-widest text-white/30">Message</label>
+                <textarea rows={4} placeholder="Type your message here..." className="bg-white/5 border border-white/10 p-4 text-sm focus:outline-none focus:border-accent transition-colors resize-none" />
+              </div>
+              <button className="w-full py-5 bg-accent text-black font-bold uppercase tracking-widest hover:bg-white transition-all shadow-[0_0_30px_rgba(197,164,126,0.2)]">
+                Submit Details
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
       {/* FOOTER: TECHNICAL DARK */}
       <footer id="contact" className="relative z-20 bg-luxury-black border-t border-white/5 px-10 pt-40 pb-20 md:px-16">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-32">
           <div className="col-span-1 lg:col-span-2">
             <div className="flex items-center gap-6 mb-12">
               <img 
-                src="https://scontent-lga3-1.cdninstagram.com/v/t51.82787-19/656854235_18065585342344384_6068187014476373540_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=103&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy43NjguQzMifQ%3D%3D&_nc_ohc=Rq-EMEOlmg0Q7kNvwHDzoXk&_nc_oc=AdpwY2WAo4vpouw9o6iVw_B-Q9xgvIjdxvU83WTslfvY2Z6f2I5vtjQ9lxFbJ0W8KSfthgBLJbJoLKNA0LyWk05Q&_nc_zt=24&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_gid=v0cAt6opGnt4a6IJvcLzqg&_nc_ss=7b6a8&oh=00_Af1t_-esJnGUbQms3z2LrHR0r6B5hCCDOfjsdpdc4MfjnA&oe=69F5824B" 
-                alt="Prime Mile Club" 
-                className="h-16 w-16 rounded-full border border-white/10 object-cover"
+                src="https://static.wixstatic.com/media/2a3a0c_6120e46b142544cb932f45f92b53365f~mv2.png/v1/fill/w_482,h_321,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/62BB08A8-3DDB-498A-B48A-D877DE454C42%20(1)_PNG.png" 
+                alt="Khalifa Exotic Rentals" 
+                className="h-16 w-24 object-contain"
                 referrerPolicy="no-referrer"
               />
               <div className="flex flex-col gap-1">
-                <span className="text-3xl font-light tracking-[0.2em] text-white uppercase leading-none block">Prime Mile</span>
-                <span className="text-[10px] tracking-[0.6em] text-accent font-light uppercase mt-1">Club</span>
+                <span className="text-3xl font-light tracking-[0.1em] text-white uppercase leading-none block">Khalifa Exotic</span>
+                <span className="text-[10px] tracking-[0.4em] text-accent font-light uppercase mt-1">Rentals</span>
               </div>
             </div>
             <div className="flex flex-col gap-4 text-[9px] font-extralight uppercase tracking-[0.4em] text-white/30">
-              <p>REGION: MIAMI_EXCLUSIVE</p>
-              <p>STATUS: ACTIVE_CONCIERGE</p>
-              <p>ESTABLISHED: MMXXIV</p>
+              <p>REGION: ATLANTA_METRO</p>
+              <p>STATUS: ACTIVE_FLEET</p>
+              <p>ESTABLISHED: MMXXI</p>
             </div>
           </div>
 
           <div>
-            <h4 className="text-[10px] font-bold uppercase tracking-[0.6em] mb-12 text-accent">The Collection</h4>
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.6em] mb-12 text-accent">Connect</h4>
             <div className="flex flex-col gap-8 text-[11px] font-bold uppercase tracking-[0.3em] text-white/50">
-              {["Master Registry", "Concierge Hub", "Client Portal", "Private Inquiry"].map(label => (
-                <a key={label} href="#" className="hover:text-accent transition-colors w-fit">{label}</a>
-              ))}
+              <a href="tel:678-262-7585" className="hover:text-accent transition-colors flex items-center gap-4">
+                <Phone size={14} /> 678-262-7585
+              </a>
+              <a href="mailto:Go2global1@gmail.com" className="hover:text-accent transition-colors">Go2global1@gmail.com</a>
+              <a href="#" className="hover:text-accent transition-colors">Instagram</a>
             </div>
           </div>
 
           <div>
-            <h4 className="text-[10px] font-bold uppercase tracking-[0.6em] mb-12 text-accent">Contact Protocol</h4>
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.6em] mb-12 text-accent">Links</h4>
             <div className="flex flex-col gap-8 text-[11px] font-bold uppercase tracking-[0.3em] text-white/30">
-              <p>Direct: FL_NY_TERRITORIES</p>
-              <p>Secure: ENCRYPTED_INBOX</p>
-              <p>Global: HUB_LOGISTICS</p>
+              <a href="#about" className="hover:text-white transition-colors">About Us</a>
+              <a href="#services" className="hover:text-white transition-colors">Services</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setShowInventory(true); }} className="hover:text-white transition-colors">Our Fleet</a>
+              <a href="#partner" className="hover:text-white transition-colors">Rent Your Car</a>
             </div>
           </div>
 
           <div className="relative p-12 bg-white/[0.02] border border-white/10 corner-bracket overflow-hidden group">
             <div className="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-            <h4 className="relative text-[10px] font-black uppercase tracking-[0.4em] mb-8 text-white">Private Inquiry</h4>
-            <button className="relative w-full py-5 bg-accent text-black text-[10px] font-black uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all hud-glow">
-              Initialize Experience
-            </button>
+            <h4 className="relative text-[10px] font-black uppercase tracking-[0.4em] mb-8 text-white">Contact Us</h4>
+            <a href="tel:678-262-7585" className="relative block w-full py-5 bg-accent text-black text-center text-[10px] font-black uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all hud-glow">
+              Call Now
+            </a>
           </div>
         </div>
 
         <div className="max-w-[1400px] mx-auto border-t border-white/5 pt-10 flex justify-between items-center">
-          <p className="text-[9px] font-light tracking-[0.4em] text-white/10 uppercase">© 2026 PRIME_MILE_CLUB // ABSOLUTE_DISTINCTION.</p>
+          <p className="text-[9px] font-light tracking-[0.4em] text-white/10 uppercase">© 2022 KHALIFA_EXOTIC_RENTALS // PROUDLY_CREATED_WITHOUT_WIX.</p>
           <div className="hidden md:flex gap-10">
             {["Terms", "Privacy", "System"].map(link => (
               <a key={link} href="#" className="text-[9px] font-mono tracking-[0.4em] text-white/10 hover:text-accent transition-colors uppercase">{link}</a>
