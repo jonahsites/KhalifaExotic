@@ -40,18 +40,18 @@ const sections = [
     accent: "#C5A47E"
   },
   {
-    label: "02 — German Engineering",
-    title: "Audi\nR8 V10",
+    label: "02 — Refined Precision",
+    title: "BMW\nM4 Competition",
     desc: "A surgical blend of elegance and athletic design. The naturally aspirated icon, curated for an engaging journey through the city.",
-    tags: ["Supercar", "Quattro AWD", "Daytona Grey"],
+    tags: ["M Performance", "S58 Inline-6", "Brooklyn Grey"],
     color: "#050505",
     accent: "#C5A47E"
   },
   {
-    label: "03 — Modern Luxury",
-    title: "Mercedes\nAMG GLE 53",
-    desc: "The perfect balance of space and speed. Experience the peak of comfort and performance for your next Atlanta adventure.",
-    tags: ["AMG Performance", "Luxury SUV", "Obsidian Black"],
+    label: "03 — Pure Performance",
+    title: "McLaren\n570S Spider",
+    desc: "A breathtaking encounter with carbon-fiber innovation. Experience the absolute distinction of British engineering on the streets of Atlanta.",
+    tags: ["Carbon Monocell", "Twin-Turbo V8", "Dihedral Doors"],
     color: "#050505",
     accent: "#C5A47E"
   }

@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ArrowUpRight, Search, Filter } from 'lucide-react';
 
-const categories = ["All", "Lamborghini", "Corvette", "Audi", "Tesla", "Porsche", "Mercedes", "Education"];
+const categories = ["All", "Lamborghini", "Corvette", "BMW", "Tesla", "Porsche", "McLaren", "Education"];
 
 const cars = [
   { id: 1, name: "2019 Lamborghini Urus", category: "Lamborghini", price: 1200, hp: 641, speed: "190 MPH", image: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&q=80&w=800" },
-  { id: 2, name: "2023 Audi R8", category: "Audi", price: 800, hp: 602, speed: "205 MPH", image: "https://images.unsplash.com/photo-1606611013016-969c19ba27bb?auto=format&fit=crop&q=80&w=800" },
-  { id: 3, name: "Mercedes AMG GLE 53", category: "Mercedes", price: 500, hp: 429, speed: "155 MPH", image: "https://images.unsplash.com/photo-1520031441872-265e4ff70366?auto=format&fit=crop&q=80&w=800" },
+  { id: 2, name: "2024 BMW M4 Competition", category: "BMW", price: 550, hp: 503, speed: "180 MPH", image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&q=80&w=800" },
+  { id: 3, name: "McLaren 570S Spider", category: "McLaren", price: 850, hp: 562, speed: "204 MPH", image: "https://images.unsplash.com/photo-1597404294360-feeeda0a751a?auto=format&fit=crop&q=80&w=800" },
   { id: 4, name: "2022 Corvette C8", category: "Corvette", price: 450, hp: 495, speed: "194 MPH", image: "https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&q=80&w=800" },
   { id: 5, name: "2024 Corvette C8", category: "Corvette", price: 450, hp: 495, speed: "194 MPH", image: "https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&q=80&w=800" },
   { id: 6, name: "2023 Porsche Panamera S", category: "Porsche", price: 375, hp: 443, speed: "180 MPH", image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=800" },
@@ -39,7 +39,7 @@ const Inventory: React.FC<InventoryProps> = ({ onClose }) => {
         {/* Header */}
         <div className="flex justify-between items-start mb-20">
           <div>
-            <div className="text-accent text-[10px] uppercase tracking-[0.5em] font-light mb-4">The Elite Registry by Prime Mile Club</div>
+            <div className="text-accent text-[10px] uppercase tracking-[0.5em] font-light mb-4">The Elite Registry by Khalifa Exotic Rentals</div>
             <h2 className="text-5xl md:text-7xl font-serif font-thin uppercase tracking-tighter leading-none">
               The <span className="text-white/20 text-outline">Marque</span> <br/> Of Excellence.
             </h2>
@@ -135,7 +135,7 @@ const Inventory: React.FC<InventoryProps> = ({ onClose }) => {
 
         {filteredCars.length === 0 && (
           <div className="py-40 text-center">
-            <p className="text-white/20 uppercase tracking-[0.5em] text-xs">No matching vehicles found in our Miami collection.</p>
+            <p className="text-white/20 uppercase tracking-[0.5em] text-xs">No matching vehicles found in our Atlanta collection.</p>
           </div>
         )}
       </div>
